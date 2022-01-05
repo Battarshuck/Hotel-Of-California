@@ -103,13 +103,35 @@ namespace DBapplication
                     //query to get role_id
                     DataTable role_id = controllerObj.SelectRoleid(text_username.Text);
     
-                    if (role_id.Rows[0][0].ToString() == "EMP.mgr")
+                    if (role_id.Rows[0][0].ToString() == "MGR")
                     {
                         Form_manager Form_account = new Form_manager();
                         Form_account.Show();
                     }
+                    else if (role_id.Rows[0][0].ToString() == "RecEMP")
+                    {
+                        Form_Receptionist form_account = new Form_Receptionist();
+                        form_account.Show();
+                    }
+                    else if (role_id.Rows[0][0].ToString() == "HouEMP")
+                    {
+                        Form_HouseKeeping form_account = new Form_HouseKeeping();
+                        form_account.Show();
+                    }
+                    else if (role_id.Rows[0][0].ToString() == "OrgEMP")
+                    {
+                        Organizer form_account = new Organizer();
+                        form_account.Show();
+                    }
+                    else if(role_id.Rows[0][0].ToString() == "CEO")
+                    {
+                        Form_CEO form_account = new Form_CEO();
+                        form_account.Show();
+                    }
 
-                    
+
+
+
                 }
                 else 
                 {

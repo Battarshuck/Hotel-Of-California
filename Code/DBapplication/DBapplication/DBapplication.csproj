@@ -57,6 +57,30 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="Form_CEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CEO.Designer.cs">
+      <DependentUpon>Form_CEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_HouseKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_HouseKeeping.Designer.cs">
+      <DependentUpon>Form_HouseKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Receptionist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Receptionist.Designer.cs">
+      <DependentUpon>Form_Receptionist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Organizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organizer.Designer.cs">
+      <DependentUpon>Organizer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Account_manager.resx">
       <DependentUpon>Account_manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Receptionist.resx">
+      <DependentUpon>Form_Receptionist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>

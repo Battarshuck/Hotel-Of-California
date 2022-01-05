@@ -53,3 +53,4 @@ E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBap
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.CoreCompileInputs.cache
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
