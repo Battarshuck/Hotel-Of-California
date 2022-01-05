@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class Supplier : System.Windows.Forms.Form
+    public partial class form : System.Windows.Forms.Form
     {
         Controller controllerObj;
-        public Supplier()
+        public form()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace DBapplication
 
         private void insertButton_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.Insert();
+            /*int result = controllerObj.Insert();
             if (result == 0)
             {
                 MessageBox.Show("The insertion of a new Supplier failed");
@@ -32,7 +32,7 @@ namespace DBapplication
             else
             {
                 MessageBox.Show("The row is inserted successfully!");
-            }
+            }*/
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -84,14 +84,46 @@ namespace DBapplication
 
         private void show_btn_Click(object sender, EventArgs e)
         {
-            Show_Form hi = new Show_Form();
-            hi.Show();
+            Show_Form Form_signup = new Show_Form();
+            Form_signup.Show();
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
         {
-            edit_form hi = new edit_form();
-            hi.Show();
+
+            string username = text_username.Text;
+            try
+            {
+                int result = controllerObj.ExistAccount(text_username.Text, text_password.Text);
+                MessageBox.Show("Login successfully");
+
+                if (username[0] == 'E' && username[1] == 'M' && username[2] == 'P')
+                {
+                    //manager form
+                    //query to get role_id
+                    DataTable role_id = controllerObj.SelectRoleid(text_username.Text);
+    
+                    if (role_id.Rows[0][0].ToString() == "EMP.mgr")
+                    {
+                        Form_manager Form_account = new Form_manager();
+                        Form_account.Show();
+                    }
+
+                    
+                }
+                else 
+                {
+                    //user(guest) form
+                    Form_useraccount Form_account = new Form_useraccount();
+                    Form_account.Show();
+                }
+                
+            }
+            catch
+            {
+                MessageBox.Show("Failed to login. Please check your email or password");
+            }
+            
         }
 
 

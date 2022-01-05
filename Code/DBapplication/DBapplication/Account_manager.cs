@@ -5,19 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class edit_form : Form
-    {
-        Controller controllerObj = new Controller();
-        public edit_form()
-        {
-            InitializeComponent();
-
-        }
-
-
-    }
+	public partial class Form_manager : Form
+	{
+		public Form_manager()
+		{
+			InitializeComponent();
+		}
+	}
 }

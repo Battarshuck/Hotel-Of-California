@@ -9,13 +9,15 @@ using System.Windows.Forms;
 
 namespace DBapplication
 {
-    public partial class Show_Form : Form
+    public partial class Form_useraccount : Form
     {
-        Controller controllerObject = new Controller();
-        public Show_Form()
+        Controller controllerObj = new Controller();
+        public Form_useraccount()
         {
             InitializeComponent();
+
         }
+
 
     }
 }
