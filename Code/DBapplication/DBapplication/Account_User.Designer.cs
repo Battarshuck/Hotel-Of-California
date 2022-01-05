@@ -1,7 +1,7 @@
 ﻿
 namespace DBapplication
 {
-    partial class Show_Form
+    partial class Form_useraccount
     {
         /// <summary>
         /// Required designer variable.
@@ -29,16 +29,16 @@ namespace DBapplication
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Show_Form
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Show_Form";
-            this.Text = "Show Database";
-            this.ResumeLayout(false);
+			this.SuspendLayout();
+			// 
+			// Form_useraccount
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(1089, 563);
+			this.Name = "Form_useraccount";
+			this.Text = "Account";
+			this.ResumeLayout(false);
 
         }
 
