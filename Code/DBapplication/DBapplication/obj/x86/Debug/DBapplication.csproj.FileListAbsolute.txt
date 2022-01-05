@@ -40,3 +40,16 @@ C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBappl
 C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.form.resources
 C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_useraccount.resources
 C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_manager.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe.config
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.pdb
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csprojAssemblyReference.cache
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_manager.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Show_Form.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_useraccount.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.form.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Properties.Resources.resources
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.GenerateResource.cache
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.CoreCompileInputs.cache
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
+E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
