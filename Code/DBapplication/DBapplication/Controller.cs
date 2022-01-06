@@ -52,6 +52,18 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectRoomType()
+        {
+            string query = $"(select RoomType from RoomType)  union (select RoomType from RoomType) ;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectRoomView()
+        {
+            string query = $"(select RoomView from RoomType)  union (select RoomView from RoomType) ;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public DataTable SelectRoleid(string username)
         {
             string query = $"SELECT RoleID FROM Employee where UserName='{username}';";
