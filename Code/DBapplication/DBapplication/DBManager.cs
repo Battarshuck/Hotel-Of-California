@@ -14,7 +14,6 @@ namespace DBapplication
         static string DB_Connection_String = @"Data Source=DESKTOP-FLO2DNP\SQLEXPRESS;Initial Catalog=Hotel_Project;Integrated Security=True";
 
 
-
         SqlConnection myConnection;
 
         public DBManager()
