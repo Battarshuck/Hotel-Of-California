@@ -44,6 +44,7 @@ namespace DBapplication
             int temp = SelectLastBillNO();
 
             string query = $"INSERT INTO Reservation (StartDate,EndDate,USSN,RoomNO,BillNO)  Values ('{StartDate}','{EndDate}',{USSN},{RoomNO},{temp});";
+            SetOccupancy(RoomNO);
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertBill(string RoomCost)
@@ -68,6 +69,21 @@ namespace DBapplication
             string query = $"UPDATE SET WHERE ;";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public int UpdateRoomStatus(string RoomNo)
+        {
+            string query = $"Update room set room.Cleaned = 'T' where room.RoomNO = {RoomNo}; ";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+
+        public int SetOccupancy(string RoomNO)
+        {
+            string query = $"UPDATE Room SET Occupancy = 1 WHERE RoomNO = {RoomNO};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        
         //------------------------------------------SELECT QUERIES---------------------------------------------
         public DataTable Select()
         {
@@ -75,6 +91,23 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectResDetails(string ssn)
+        {
+            string query = $"Select Room.RoomNO, RoomType.RoomView, RoomType.RoomType, Reservation.StartDate, Reservation.EndDate from Room, RoomType, Reservation where Reservation.USSN = {ssn} and Room.RoomNO = Reservation.RoomNO and RoomType.RoomTypeID = Room.RoomType; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectUserSSN(string userName, string password)
+        {
+            string query = $"Select[User].SSN from[User], LoginAccount where LoginAccount.UserName = [User].UserName and LoginAccount.Password = '{password}' and[User].UserName = '{userName}'; ";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRoomPrice(string roomNo)
+        {
+            string query = $"Select RoomType.Price from RoomType, Room where Room.RoomNO = {roomNo} and Room.RoomType = RoomType.RoomTypeID ;";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectRoomType()
         {
             string query = $"(select RoomType from RoomType)  union (select RoomType from RoomType) ;";
@@ -98,6 +131,14 @@ namespace DBapplication
             string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0);";
             return dbMan.ExecuteReader(query);
         }
+
+        public DataTable SelectAvailableRoomNumberPrice(string RoomType, string RoomView, string startDate, string endDate, string price)
+        {
+            string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and RT.Price <= {price}) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0  and RT.Price <= {price});";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public DataTable SelectUserSSN()
         {
             string query = $"SELECT SSN FROM [User];";
@@ -113,10 +154,9 @@ namespace DBapplication
 
         public int SelectPriceForBill(string RoomNO)
         {
-            string query = $"Select Price from Room as r, RoomType as RT , Reservation as res where res.RoomNO = r.RoomNO and r.RoomType = RT.RoomTypeID and res.RoomNO = {RoomNO};";
+            string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
             return (int)dbMan.ExecuteScalar(query);
         }
-
 
 
         public int Count()
