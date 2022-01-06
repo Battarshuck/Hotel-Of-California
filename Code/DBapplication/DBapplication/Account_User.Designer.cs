@@ -44,10 +44,14 @@ namespace DBapplication
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.reserveRoom_startdate = new System.Windows.Forms.DateTimePicker();
+            this.reserveRoom_enddate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.viewRoom_startdate = new System.Windows.Forms.DateTimePicker();
+            this.viewRoom_enddate = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -55,6 +59,10 @@ namespace DBapplication
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.viewRoom_enddate);
+            this.groupBox1.Controls.Add(this.viewRoom_startdate);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.txt_Price);
@@ -110,7 +118,7 @@ namespace DBapplication
             // 
             // reserveBtn
             // 
-            this.reserveBtn.Location = new System.Drawing.Point(793, 55);
+            this.reserveBtn.Location = new System.Drawing.Point(793, 24);
             this.reserveBtn.Name = "reserveBtn";
             this.reserveBtn.Size = new System.Drawing.Size(117, 29);
             this.reserveBtn.TabIndex = 4;
@@ -153,16 +161,16 @@ namespace DBapplication
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.reserveRoom_enddate);
+            this.groupBox2.Controls.Add(this.reserveRoom_startdate);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.reserveBtn);
             this.groupBox2.Location = new System.Drawing.Point(21, 216);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(936, 101);
+            this.groupBox2.Size = new System.Drawing.Size(936, 74);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Reserve room";
@@ -193,28 +201,28 @@ namespace DBapplication
             this.comboBox1.Size = new System.Drawing.Size(132, 24);
             this.comboBox1.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // reserveRoom_startdate
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(348, 31);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 22);
-            this.dateTimePicker1.TabIndex = 11;
+            this.reserveRoom_startdate.CustomFormat = "dd-MM-yyyy";
+            this.reserveRoom_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.reserveRoom_startdate.Location = new System.Drawing.Point(348, 31);
+            this.reserveRoom_startdate.Name = "reserveRoom_startdate";
+            this.reserveRoom_startdate.Size = new System.Drawing.Size(109, 22);
+            this.reserveRoom_startdate.TabIndex = 11;
             // 
-            // dateTimePicker2
+            // reserveRoom_enddate
             // 
-            this.dateTimePicker2.CustomFormat = "dd-MM-yyyy";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(635, 31);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(82, 22);
-            this.dateTimePicker2.TabIndex = 12;
+            this.reserveRoom_enddate.CustomFormat = "dd-MM-yyyy";
+            this.reserveRoom_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.reserveRoom_enddate.Location = new System.Drawing.Point(635, 31);
+            this.reserveRoom_enddate.Name = "reserveRoom_enddate";
+            this.reserveRoom_enddate.Size = new System.Drawing.Size(82, 22);
+            this.reserveRoom_enddate.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(534, 36);
+            this.label6.Location = new System.Drawing.Point(270, 127);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 10;
@@ -228,6 +236,42 @@ namespace DBapplication
             this.label7.Size = new System.Drawing.Size(70, 17);
             this.label7.TabIndex = 11;
             this.label7.Text = "Start date";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 17);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Start date";
+            // 
+            // viewRoom_startdate
+            // 
+            this.viewRoom_startdate.CustomFormat = "dd-MM-yyyy";
+            this.viewRoom_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.viewRoom_startdate.Location = new System.Drawing.Point(113, 122);
+            this.viewRoom_startdate.Name = "viewRoom_startdate";
+            this.viewRoom_startdate.Size = new System.Drawing.Size(109, 22);
+            this.viewRoom_startdate.TabIndex = 13;
+            // 
+            // viewRoom_enddate
+            // 
+            this.viewRoom_enddate.CustomFormat = "dd-MM-yyyy";
+            this.viewRoom_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.viewRoom_enddate.Location = new System.Drawing.Point(352, 127);
+            this.viewRoom_enddate.Name = "viewRoom_enddate";
+            this.viewRoom_enddate.Size = new System.Drawing.Size(109, 22);
+            this.viewRoom_enddate.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(521, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 17);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "End date";
             // 
             // Form_useraccount
             // 
@@ -267,7 +311,11 @@ namespace DBapplication
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker reserveRoom_enddate;
+        private System.Windows.Forms.DateTimePicker reserveRoom_startdate;
+        private System.Windows.Forms.DateTimePicker viewRoom_enddate;
+        private System.Windows.Forms.DateTimePicker viewRoom_startdate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -34,6 +34,29 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int InsertRerservation(string StartDate, string EndDate, string USSN, string RoomNO, int N)
+        {
+            int price = SelectPriceForBill(RoomNO);
+
+            price = price * N;
+            InsertBill(price.ToString());
+
+            int temp = SelectLastBillNO();
+
+            string query = $"INSERT INTO Reservation (StartDate,EndDate,USSN,RoomNO,BillNO)  Values ('{StartDate}','{EndDate}',{USSN},{RoomNO},{temp});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertBill(string RoomCost)
+        {
+            string query = $"INSERT INTO Bill (RoomCost) Values ({RoomCost});";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int Insert()
+        {
+            string query = $"INSERT INTO  Values ();";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         public int Delete()
         {
             string query = $"DELETE FROM  WHERE ";
@@ -69,6 +92,31 @@ namespace DBapplication
             string query = $"SELECT RoleID FROM Employee where UserName='{username}';";
             return dbMan.ExecuteReader(query);
         }
+        //For the combox
+        public DataTable SelectAvailableRoomNumber(string RoomType, string RoomView, string startDate, string endDate)
+        {
+            string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0);";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectUserSSN()
+        {
+            string query = $"SELECT SSN FROM [User];";
+            return dbMan.ExecuteReader(query);
+        }
+      
+
+        public int SelectLastBillNO()
+        {
+            string query = $"select max(BillNO) from Bill;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int SelectPriceForBill(string RoomNO)
+        {
+            string query = $"Select Price from Room as r, RoomType as RT , Reservation as res where res.RoomNO = r.RoomNO and r.RoomType = RT.RoomTypeID and res.RoomNO = {RoomNO};";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
 
 
         public int Count()
@@ -77,9 +125,29 @@ namespace DBapplication
             return (int)dbMan.ExecuteScalar(query);
         }
 
+        public int CountBills()
+        {
+            string query = $"Select Count(Bill.BillNO) from Bill ;";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
         public int ExistAccount(string username, string password)
         {
+
             string query = $"select 1 where EXISTS(select UserName from LoginAccount where UserName = '{username}' AND[Password]= '{password}');";
+            return (int)dbMan.ExecuteScalar(query);
+
+        }
+
+        public int ExistAvailableRoom(string RoomType, string RoomView)
+        {
+            string query = $"select 1 where EXISTS(select R.Occupancy from RoomType as RT,Room as R where RT.RoomTypeID = R.RoomType and RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.Occupancy = 0);";
+            return (int)dbMan.ExecuteScalar(query);
+        }
+
+        public int ExistRoomToReserve(string RoomType, string RoomView, string startDate, string endDate)
+        {
+            string query = $"select 1 from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID) = RoomNO and (EndDate < '{startDate}' OR StartDate > '{endDate}');";
             return (int)dbMan.ExecuteScalar(query);
         }
 
