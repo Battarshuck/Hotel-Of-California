@@ -46,7 +46,9 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-
+<<<<<<< HEAD
+        public int InsertEvent(string cost, string description, string startdate, string enddate)
+=======
         public int InsertRerservation(string StartDate, string EndDate, string USSN, string RoomNO, int N)
         {
             int price = SelectPriceForBill(RoomNO);
@@ -76,16 +78,15 @@ namespace DBapplication
         }
 
         //------------------------------------------Delete QUERIES---------------------------------------------
-        
-
-		public int InsertEvent(string cost, string description, string startdate, string enddate)
+        public int Delete()
+>>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
         {
             string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
                 $"values({cost}, '{description}', '{startdate}', '{enddate}')";
             return dbMan.ExecuteNonQuery(query);
         }
 
-
+<<<<<<< HEAD
         //------------------------------------DELETE QUERIES-------------------------
         public int DeleteEvent(string num)
         {
@@ -99,7 +100,7 @@ namespace DBapplication
             string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
             return dbMan.ExecuteNonQuery(query);
         }
-
+=======
         public int DeleteReservtion(string RoomNO, string USSN)
         {
             string query = $"DELETE FROM Reservation WHERE RoomNO = {RoomNO} and USSN = {USSN}";
@@ -107,7 +108,7 @@ namespace DBapplication
         }
 
         //------------------------------------------Update QUERIES---------------------------------------------
-
+>>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
@@ -184,7 +185,7 @@ namespace DBapplication
             return (int)dbMan.ExecuteScalar(query);
         }
 
-
+<<<<<<< HEAD
         public DataTable SelectEmployeeName(string username)
         {
             string query = $"EXEC SelectEmployeeName @user_username = '{username}'";
@@ -218,8 +219,7 @@ namespace DBapplication
         public DataTable SelectRoomsRequestClean(string username)
         {
             string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
-			return dbMan.ExecuteScalar(query);
-		}
+=======
         public int SelectPriceForBill(string RoomNO)
         {
             string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
@@ -229,7 +229,7 @@ namespace DBapplication
         public DataTable SelectRoomPrice(string RoomNO)
         {
             string query = $"select EventCost, RoomCost, (EventCost + RoomCost) as TotalCost from  Bill as b, Reservation as r where b.BillNO = r.BillNO and r.RoomNO = {RoomNO};" ;
-
+>>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
             return dbMan.ExecuteReader(query);
         }
 

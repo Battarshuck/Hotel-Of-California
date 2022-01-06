@@ -54,6 +54,15 @@ E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBap
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+<<<<<<< HEAD
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_editevents.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Organizer.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_findevents.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_HouseKeeping.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_checkrooms.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_housekeepingmarkrooms.resources
+=======
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe.config
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.pdb
@@ -68,3 +77,4 @@ D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplicat
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.CoreCompileInputs.cache
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
 D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
+>>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
