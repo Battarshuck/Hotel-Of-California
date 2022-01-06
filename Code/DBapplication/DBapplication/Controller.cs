@@ -68,6 +68,21 @@ namespace DBapplication
             SetEventCostNulls();
             return dbMan.ExecuteNonQuery(query);
         }
+        public int InsertDependents(string FName,string LName,string ESSN,string gender,string relationship)
+        {
+            string query = $"INSERT INTO Dependents Values ('{FName}' ,'{LName}' , {ESSN} ,'{gender}' , '{relationship}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertEmployee(string FName, string Minit,string LName, string SSN,string roleid,string gender, string BDate, string Address, string MobileNO, string SuperSSN, string salary, string username)
+        {
+            string query = $"INSERT INTO Employee  Values ('{FName}','{Minit}','{LName}',{SSN},'{roleid}','{gender}','{BDate}','{Address}','{MobileNO}',{SuperSSN},{salary},'{username}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int InsertEmpAccount(string username,string password)
+        {
+            string query = $"INSERT INTO LoginAccount Values ('{username}','{password}');";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int Insert()
         {
             string query = $"INSERT INTO  Values ();";
@@ -84,6 +99,11 @@ namespace DBapplication
         public int DeleteReservtion(string RoomNO, string USSN)
         {
             string query = $"DELETE FROM Reservation WHERE RoomNO = {RoomNO} and USSN = {USSN}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int DeleteDependents(string FName, string ESSN)
+        {
+            string query = $"DELETE FROM Dependents WHERE FName = '{FName}' and ESSN = {ESSN}";
             return dbMan.ExecuteNonQuery(query);
         }
 
@@ -157,7 +177,28 @@ namespace DBapplication
             string query = $"SELECT SSN FROM [User];";
             return dbMan.ExecuteReader(query);
         }
-      
+        public DataTable SelectEmployeSSN()
+        {
+            string query = $"SELECT distinct SSN FROM Employee;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectRoleID()
+        {
+            string query = $"SELECT distinct RoleID FROM Roles;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectEmployeDEPSSN()
+        {
+            string query = $"SELECT distinct ESSN FROM Dependents;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectDependentFName()
+        {
+            string query = $"SELECT distinct FName FROM Dependents;";
+            return dbMan.ExecuteReader(query);
+        }
+
+
         public int SelectLastBillNO()
         {
             string query = $"select max(BillNO) from Bill;";

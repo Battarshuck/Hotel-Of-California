@@ -16,5 +16,23 @@ namespace DBapplication
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void AddRemoveRoomsBtn_Click(object sender, EventArgs e)
+        {
+			Edit_Rooms ER = new Edit_Rooms();
+			ER.Show();
+        }
+
+        private void EditEmployeesBtn_Click(object sender, EventArgs e)
+        {
+			Edit_Employees EDEmp = new Edit_Employees();
+			EDEmp.Show();
+        }
+
+        private void EditDependentsBtn_Click(object sender, EventArgs e)
+        {
+            Edit_Dependents EDep = new Edit_Dependents();
+            EDep.Show();
+        }
+    }
 }

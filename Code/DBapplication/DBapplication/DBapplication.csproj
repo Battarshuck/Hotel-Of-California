@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DBapplication</RootNamespace>
     <AssemblyName>DBapplication</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -57,6 +57,24 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="Edit_Dependents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Dependents.Designer.cs">
+      <DependentUpon>Edit_Dependents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Employees.Designer.cs">
+      <DependentUpon>Edit_Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Rooms.Designer.cs">
+      <DependentUpon>Edit_Rooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_CEO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Account_manager.resx">
       <DependentUpon>Account_manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Dependents.resx">
+      <DependentUpon>Edit_Dependents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Employees.resx">
+      <DependentUpon>Edit_Employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Receptionist.resx">
       <DependentUpon>Form_Receptionist.cs</DependentUpon>
