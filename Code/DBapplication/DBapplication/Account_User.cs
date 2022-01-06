@@ -61,11 +61,15 @@ namespace DBapplication
                 //    dataGridView1.Rows.= dt3.Rows[0][0].ToString();
                 //}
                 RoomNo_txt.Items.Clear();
-                for (int i = 0; i < dt.Rows.Count; i++)
+                try
                 {
-                    string RoomNo = dt.Rows[i][0].ToString();
-                    RoomNo_txt.Items.Add(RoomNo);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        string RoomNo = dt.Rows[i][0].ToString();
+                        RoomNo_txt.Items.Add(RoomNo);
+                    }
                 }
+                catch { }
 
                 dataGridView1.Refresh();
                 return;
@@ -76,17 +80,26 @@ namespace DBapplication
             // int check = controllerObject.ExistRoomToReserve(CheckRoomTypeCombo.Text, CheckRoomViewCombo.Text, CheckStartDate.Text, CheckEndDate.Text);
 
             // DataTable dt = controllerObject.SelectAvailableRoomNumber(CheckRoomTypeCombo.Text, CheckRoomViewCombo.Text, CheckStartDate.Text, CheckEndDate.Text);
-
-            for (int i = 0; i < dt2.Rows.Count; i++)
+            try
             {
-                string RoomNo = dt2.Rows[i][0].ToString();
-                RoomNo_txt.Items.Add(RoomNo);
+                for (int i = 0; i < dt2.Rows.Count; i++)
+                {
+                    string RoomNo = dt2.Rows[i][0].ToString();
+                    RoomNo_txt.Items.Add(RoomNo);
+                }
+            }
+
+            catch
+            {
+
             }
             dataGridView1.DataSource = dt2;
             dataGridView1.Refresh();
             return;
-
         }
+           
+
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -174,6 +187,12 @@ namespace DBapplication
                 MessageBox.Show("No reservaation!");
             }
 
+        }
+
+        private void txt_Price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cr = e.KeyChar;
+            if (!char.IsDigit(cr) && cr != 8 && cr != 46) { e.Handled = true; MessageBox.Show("Numbers only please!"); }
         }
     }
 

@@ -34,7 +34,10 @@ namespace DBapplication
             this.viewRoom_startdate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.reserveBtn = new System.Windows.Forms.Button();
+            this.RoomNo_txt = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txt_Price = new System.Windows.Forms.TextBox();
             this.comboBox_RoomView = new System.Windows.Forms.ComboBox();
@@ -44,19 +47,16 @@ namespace DBapplication
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.reserveBtn = new System.Windows.Forms.Button();
-            this.RoomNo_txt = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.showReser = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SubmitCleaningReq = new System.Windows.Forms.Button();
-            this.showReser = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -121,6 +121,24 @@ namespace DBapplication
             this.label8.TabIndex = 13;
             this.label8.Text = "Start date";
             // 
+            // reserveBtn
+            // 
+            this.reserveBtn.Location = new System.Drawing.Point(797, 195);
+            this.reserveBtn.Name = "reserveBtn";
+            this.reserveBtn.Size = new System.Drawing.Size(117, 29);
+            this.reserveBtn.TabIndex = 4;
+            this.reserveBtn.Text = "Reserve";
+            this.reserveBtn.UseVisualStyleBackColor = true;
+            this.reserveBtn.Click += new System.EventHandler(this.reserveBtn_Click);
+            // 
+            // RoomNo_txt
+            // 
+            this.RoomNo_txt.FormattingEnabled = true;
+            this.RoomNo_txt.Location = new System.Drawing.Point(113, 181);
+            this.RoomNo_txt.Name = "RoomNo_txt";
+            this.RoomNo_txt.Size = new System.Drawing.Size(132, 24);
+            this.RoomNo_txt.TabIndex = 10;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -129,6 +147,15 @@ namespace DBapplication
             this.label5.Size = new System.Drawing.Size(121, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = " Available  Rooms";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Room no";
             // 
             // dataGridView1
             // 
@@ -147,6 +174,7 @@ namespace DBapplication
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(159, 22);
             this.txt_Price.TabIndex = 6;
+            this.txt_Price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Price_KeyPress);
             // 
             // comboBox_RoomView
             // 
@@ -201,33 +229,6 @@ namespace DBapplication
             this.label1.TabIndex = 0;
             this.label1.Text = "Room type";
             // 
-            // reserveBtn
-            // 
-            this.reserveBtn.Location = new System.Drawing.Point(797, 195);
-            this.reserveBtn.Name = "reserveBtn";
-            this.reserveBtn.Size = new System.Drawing.Size(117, 29);
-            this.reserveBtn.TabIndex = 4;
-            this.reserveBtn.Text = "Reserve";
-            this.reserveBtn.UseVisualStyleBackColor = true;
-            this.reserveBtn.Click += new System.EventHandler(this.reserveBtn_Click);
-            // 
-            // RoomNo_txt
-            // 
-            this.RoomNo_txt.FormattingEnabled = true;
-            this.RoomNo_txt.Location = new System.Drawing.Point(113, 181);
-            this.RoomNo_txt.Name = "RoomNo_txt";
-            this.RoomNo_txt.Size = new System.Drawing.Size(132, 24);
-            this.RoomNo_txt.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 181);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Room no";
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
@@ -238,6 +239,26 @@ namespace DBapplication
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "show my reservation";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(273, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(374, 87);
+            this.dataGridView2.TabIndex = 15;
+            // 
+            // showReser
+            // 
+            this.showReser.Location = new System.Drawing.Point(36, 25);
+            this.showReser.Name = "showReser";
+            this.showReser.Size = new System.Drawing.Size(118, 38);
+            this.showReser.TabIndex = 0;
+            this.showReser.Text = "Show";
+            this.showReser.UseVisualStyleBackColor = true;
+            this.showReser.Click += new System.EventHandler(this.showReser_Click);
             // 
             // groupBox3
             // 
@@ -259,26 +280,6 @@ namespace DBapplication
             this.SubmitCleaningReq.UseVisualStyleBackColor = true;
             this.SubmitCleaningReq.Click += new System.EventHandler(this.SubmitCleaningReq_Click);
             // 
-            // showReser
-            // 
-            this.showReser.Location = new System.Drawing.Point(36, 25);
-            this.showReser.Name = "showReser";
-            this.showReser.Size = new System.Drawing.Size(118, 38);
-            this.showReser.TabIndex = 0;
-            this.showReser.Text = "Show";
-            this.showReser.UseVisualStyleBackColor = true;
-            this.showReser.Click += new System.EventHandler(this.showReser_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(273, 21);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(374, 87);
-            this.dataGridView2.TabIndex = 15;
-            // 
             // Form_useraccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -294,8 +295,8 @@ namespace DBapplication
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

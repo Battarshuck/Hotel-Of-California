@@ -46,7 +46,7 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-
+<<<<<<< HEAD
         public int InsertEvent(string cost, string description, string startdate, string enddate)
         {
             string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
@@ -67,7 +67,7 @@ namespace DBapplication
             string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
             return dbMan.ExecuteNonQuery(query);
         }
-
+=======
 
         public int InsertRerservation(string StartDate, string EndDate, string USSN, string RoomNO, int N)
         {
@@ -97,7 +97,30 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //------------------------------------------Delete QUERIES---------------------------------------------
+        
 
+		public int InsertEvent(string cost, string description, string startdate, string enddate)
+        {
+            string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
+                $"values({cost}, '{description}', '{startdate}', '{enddate}')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+
+        //------------------------------------DELETE QUERIES-------------------------
+        public int DeleteEvent(string num)
+        {
+            string query = $"DELETE FROM Events WHERE EventNO = {num}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //------------------------------------UPDATE QUERIES-------------------------
+
+        public int UpdateRoomCleanStatus(string num)
+        {
+            string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
 
         public int DeleteReservtion(string RoomNO, string USSN)
         {
@@ -107,63 +130,33 @@ namespace DBapplication
 
         //------------------------------------------Update QUERIES---------------------------------------------
 
-
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int UpdateRoomStatus(string RoomNo)
-        {
-            string query = $"Update room set room.Cleaned = 'T' where room.RoomNO = {RoomNo}; ";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-
-
         public int SetEventCostNulls()
         {
             string query = $"UPDATE Bill SET Eventcost = 0 WHERE EventCost is NULL;";
             return dbMan.ExecuteNonQuery(query);
         }
-
         public int SetOccupancy(string RoomNO)
         {
             string query = $"UPDATE Room SET Occupancy = 1 WHERE RoomNO = {RoomNO};";
             return dbMan.ExecuteNonQuery(query);
         }
-
         public int SetNotOccupancy(string RoomNO)
         {
             string query = $"UPDATE Room SET Occupancy = 0 WHERE RoomNO = {RoomNO};";
             return dbMan.ExecuteNonQuery(query);
         }
 
-
         //------------------------------------------SELECT QUERIES---------------------------------------------
         public DataTable Select()
         {
             string query = $"SELECT * FROM ;";
-            return dbMan.ExecuteReader(query);
-        }
-
-
-        public DataTable SelectResDetails(string ssn)
-        {
-            string query = $"Select Room.RoomNO, RoomType.RoomView, RoomType.RoomType, Reservation.StartDate, Reservation.EndDate from Room, RoomType, Reservation where Reservation.USSN = {ssn} and Room.RoomNO = Reservation.RoomNO and RoomType.RoomTypeID = Room.RoomType; ";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable SelectUserSSN(string userName, string password)
-        {
-            string query = $"Select[User].SSN from[User], LoginAccount where LoginAccount.UserName = [User].UserName and LoginAccount.Password = '{password}' and[User].UserName = '{userName}'; ";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable SelectRoomPriceYomna(string roomNo)
-        {
-            string query = $"Select RoomType.Price from RoomType, Room where Room.RoomNO = {roomNo} and Room.RoomType = RoomType.RoomTypeID ;";
             return dbMan.ExecuteReader(query);
         }
 
@@ -178,6 +171,7 @@ namespace DBapplication
             string query = $"SELECT USSN FROM Reservation;";
             return dbMan.ExecuteReader(query);
         }
+
         public DataTable SelectRoomType()
         {
             string query = $"(select RoomType from RoomType)  union (select RoomType from RoomType) ;";
@@ -201,14 +195,6 @@ namespace DBapplication
             string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0);";
             return dbMan.ExecuteReader(query);
         }
-
-        public DataTable SelectAvailableRoomNumberPrice(string RoomType, string RoomView, string startDate, string endDate, string price)
-        {
-            string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and RT.Price <= {price}) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0  and RT.Price <= {price});";
-            return dbMan.ExecuteReader(query);
-        }
-
-
         public DataTable SelectUserSSN()
         {
             string query = $"SELECT SSN FROM [User];";
@@ -228,7 +214,15 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+<<<<<<< HEAD
+        public DataTable SelectEmployeeName(string username)
+        {
+            string query = $"EXEC SelectEmployeeName @user_username = '{username}'";
+            return dbMan.ExecuteReader(query);
+        }
 
+=======
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
         public DataTable SelectAllEventsNumbers()
         {
             string query = $"Select EventNO from Events";
@@ -246,7 +240,7 @@ namespace DBapplication
             string query = $"Select * from Events";
             return dbMan.ExecuteReader(query);
         }
-
+<<<<<<< HEAD
 
         public DataTable SelectRoomsToBeCleaned(string username)
         {
@@ -259,7 +253,20 @@ namespace DBapplication
             string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
             return dbMan.ExecuteReader(query);
         }
+=======
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
 
+        public DataTable SelectRoomsToBeCleaned(string username)
+        {
+            string query = $"select RoomNO,Cleaned from Room, Employee where UserName = '{username}' AND ESSN = SSN";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRoomsRequestClean(string username)
+        {
+            string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
+			return dbMan.ExecuteScalar(query);
+		}
         public int SelectPriceForBill(string RoomNO)
         {
             string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
@@ -270,12 +277,10 @@ namespace DBapplication
         {
             string query = $"select EventCost, RoomCost, (EventCost + RoomCost) as TotalCost from  Bill as b, Reservation as r where b.BillNO = r.BillNO and r.RoomNO = {RoomNO};" ;
 
-
             return dbMan.ExecuteReader(query);
         }
 
         //------------------------------------------Count QUERIES---------------------------------------------
-
         public int Count()
         {
             string query = $"SELECT COUNT() FROM ;";
