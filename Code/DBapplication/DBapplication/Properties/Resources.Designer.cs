@@ -69,5 +69,25 @@ namespace DBapplication.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bobby_yang_BhPS0x7WdPs_unsplash__1_ {
+            get {
+                object obj = ResourceManager.GetObject("bobby-yang-BhPS0x7WdPs-unsplash (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_daniel_frese_2983489__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pexels-daniel-frese-2983489 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

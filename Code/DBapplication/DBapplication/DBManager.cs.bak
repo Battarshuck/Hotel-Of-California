@@ -11,8 +11,11 @@ namespace DBapplication
     public class DBManager
     {
 
-        static string DB_Connection_String = @"Data Source=DESKTOP-4K2M8O4\SQLEXPRESS;Initial Catalog=Hotel_Project;Integrated Security=True";
+        static string DB_Connection_String = @"Data Source=DESKTOP-BEA79MR;Initial Catalog=Hotel_Project;Integrated Security=True";
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
 
         SqlConnection myConnection;
 
