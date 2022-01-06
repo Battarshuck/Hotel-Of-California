@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CheckRoomViewCombo = new System.Windows.Forms.ComboBox();
             this.CheckRoomTypeCombo = new System.Windows.Forms.ComboBox();
+
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.BillRoomNoCombo = new System.Windows.Forms.ComboBox();
@@ -56,6 +57,7 @@
             this.CheckOutBTN = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.CheckEventBTN = new System.Windows.Forms.Button();
+
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CheckBillGrid)).BeginInit();
@@ -79,12 +81,15 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.CheckRoomViewCombo);
             this.groupBox1.Controls.Add(this.CheckRoomTypeCombo);
-            this.groupBox1.Location = new System.Drawing.Point(14, 12);
+            this.groupBox1.Location = new System.Drawing.Point(19, 15);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(702, 189);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(936, 233);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Check and book room";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label6
             // 
@@ -150,14 +155,15 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Start Date";
             // 
-            // CheckEndDate
+            // label4
             // 
-            this.CheckEndDate.CustomFormat = "yyyy-MM-dd";
-            this.CheckEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CheckEndDate.Location = new System.Drawing.Point(329, 71);
-            this.CheckEndDate.Name = "CheckEndDate";
-            this.CheckEndDate.Size = new System.Drawing.Size(121, 20);
-            this.CheckEndDate.TabIndex = 6;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(353, 87);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "End Date";
             // 
             // CheckStartDate
             // 
@@ -342,7 +348,7 @@
             // 
             // Form_Receptionist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 671);
             this.Controls.Add(this.groupBox4);
@@ -350,6 +356,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+
             this.Name = "Form_Receptionist";
             this.Text = "Form_Receptionist";
             this.Load += new System.EventHandler(this.Form_Receptionist_Load);
