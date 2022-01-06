@@ -54,3 +54,17 @@ E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBap
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe.config
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.exe
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\bin\Debug\DBapplication.pdb
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.AssemblyReference.cache
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_manager.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Show_Form.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_useraccount.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.form.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Properties.Resources.resources
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.GenerateResource.cache
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.csproj.CoreCompileInputs.cache
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
+D:\Boody\DataBase\HotelProject\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
