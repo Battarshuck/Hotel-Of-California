@@ -37,7 +37,7 @@ namespace DBapplication
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            int result = controllerObj.Delete();
+           /* int result = controllerObj.Delete();
             if (result == 0)
             {
                 MessageBox.Show("No rows are deleted");
@@ -45,7 +45,7 @@ namespace DBapplication
             else
             {
                 MessageBox.Show("The row is deleted successfully!");
-            }
+            }*/
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -115,12 +115,12 @@ namespace DBapplication
                     }
                     else if (role_id.Rows[0][0].ToString() == "HouEMP")
                     {
-                        Form_HouseKeeping form_account = new Form_HouseKeeping();
+                        Form_HouseKeeping form_account = new Form_HouseKeeping(text_username.Text);
                         form_account.Show();
                     }
                     else if (role_id.Rows[0][0].ToString() == "OrgEMP")
                     {
-                        Organizer form_account = new Organizer();
+                        Organizer form_account = new Organizer(username);
                         form_account.Show();
                     }
                     else if(role_id.Rows[0][0].ToString() == "CEO")
@@ -130,8 +130,7 @@ namespace DBapplication
                     }
 
 
-
-
+                    this.Visible = false;
                 }
                 else 
                 {
@@ -139,7 +138,8 @@ namespace DBapplication
                     Form_useraccount Form_account = new Form_useraccount();
                     Form_account.Show();
                 }
-                
+
+
             }
             catch
             {
@@ -149,9 +149,22 @@ namespace DBapplication
         }
 
 
+		private void checkBox1_CheckStateChanged(object sender, EventArgs e)
+		{
+            if (checkBox1.Checked)
+            {
+                text_password.PasswordChar = '\0';
+            }
+            else
+            { 
+                text_password.PasswordChar = '●';
+            }
+        }
 
 
-        /*                 *******************     Switch Form      ****************** 
+
+
+		/*                 *******************     Switch Form      ****************** 
                     
         private void switchButton_Click(object sender, EventArgs e)
         {
@@ -160,7 +173,7 @@ namespace DBapplication
         }
         */
 
-        /*   ****************************** Only characters can be inserted into textbox ***************
+		/*   ****************************** Only characters can be inserted into textbox ***************
          * char cr = e.KeyChar;
          * if(!char.IsLetter(cr) && cr != 8 && cr !=46) {e.Handled = true;}
          * 
@@ -174,7 +187,7 @@ namespace DBapplication
          */
 
 
-        /*                *****************     Check Validations      ****************
+		/*                *****************     Check Validations      ****************
                      
         private void insertButton_Click(object sender, EventArgs e)
         {
@@ -209,7 +222,7 @@ namespace DBapplication
 
 
 
-        /*                *****************     ComboBox intialization      ****************
+		/*                *****************     ComboBox intialization      ****************
                          
         public Form2()
         {
@@ -220,5 +233,5 @@ namespace DBapplication
             comboBox1.Items.Add("Female");
         }
         */
-    }
+	}
 }

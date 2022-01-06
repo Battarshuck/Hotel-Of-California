@@ -34,12 +34,26 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        public int Delete()
+        public int InsertEvent(string cost, string description, string startdate, string enddate)
         {
-            string query = $"DELETE FROM  WHERE ";
+            string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
+                $"values({cost}, '{description}', '{startdate}', '{enddate}')";
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //------------------------------------DELETE QUERIES-------------------------
+        public int DeleteEvent(string num)
+        {
+            string query = $"DELETE FROM Events WHERE EventNO = {num}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //------------------------------------UPDATE QUERIES-------------------------
+
+        public int UpdateRoomCleanStatus(string num)
+        {
+            string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
@@ -58,6 +72,41 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+        public DataTable SelectEmployeeName(string username)
+        {
+            string query = $"EXEC SelectEmployeeName @user_username = '{username}'";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectAllEventsNumbers()
+        {
+            string query = $"Select EventNO from Events";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable SelectEvent(string num)
+        {
+            string query = $"Select * from Events where EventNO = '{num}'";
+            return dbMan.ExecuteReader(query);
+        }
+        
+        public DataTable SelectAllEvents()
+        {
+            string query = $"Select * from Events";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRoomsToBeCleaned(string username)
+        {
+            string query = $"select RoomNO,Cleaned from Room, Employee where UserName = '{username}' AND ESSN = SSN";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRoomsRequestClean(string username)
+        {
+            string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
+            return dbMan.ExecuteReader(query);
+        }
 
         public int Count()
         {
