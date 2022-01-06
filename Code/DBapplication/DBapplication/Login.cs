@@ -73,8 +73,6 @@ namespace DBapplication
             DataTable dt = controllerObj.Select();
             //suppliersDataGrid.DataSource = dt;
             //suppliersDataGrid.Refresh();
-
-
         }
 
         private void countButton_Click(object sender, EventArgs e)

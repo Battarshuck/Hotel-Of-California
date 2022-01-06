@@ -182,6 +182,12 @@
   <ItemGroup>
     <None Include="Resources\bobby-yang-BhPS0x7WdPs-unsplash.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bobby-yang-BhPS0x7WdPs-unsplash %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-daniel-frese-2983489 %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
