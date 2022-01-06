@@ -97,30 +97,7 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
-        //------------------------------------------Delete QUERIES---------------------------------------------
-        
 
-		public int InsertEvent(string cost, string description, string startdate, string enddate)
-        {
-            string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
-                $"values({cost}, '{description}', '{startdate}', '{enddate}')";
-            return dbMan.ExecuteNonQuery(query);
-        }
-
-
-        //------------------------------------DELETE QUERIES-------------------------
-        public int DeleteEvent(string num)
-        {
-            string query = $"DELETE FROM Events WHERE EventNO = {num}";
-            return dbMan.ExecuteNonQuery(query);
-        }
-        //------------------------------------UPDATE QUERIES-------------------------
-
-        public int UpdateRoomCleanStatus(string num)
-        {
-            string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
-            return dbMan.ExecuteNonQuery(query);
-        }
 
         public int DeleteReservtion(string RoomNO, string USSN)
         {
@@ -215,14 +192,6 @@ namespace DBapplication
         }
 
 
-        public DataTable SelectEmployeeName(string username)
-        {
-            string query = $"EXEC SelectEmployeeName @user_username = '{username}'";
-            return dbMan.ExecuteReader(query);
-        }
-
-
-
         public DataTable SelectAllEventsNumbers()
         {
             string query = $"Select EventNO from Events";
@@ -254,18 +223,6 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
-
-        public DataTable SelectRoomsToBeCleaned(string username)
-        {
-            string query = $"select RoomNO,Cleaned from Room, Employee where UserName = '{username}' AND ESSN = SSN";
-            return dbMan.ExecuteReader(query);
-        }
-
-        public DataTable SelectRoomsRequestClean(string username)
-        {
-            string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
-			return dbMan.ExecuteScalar(query);
-		}
         public int SelectPriceForBill(string RoomNO)
         {
             string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
