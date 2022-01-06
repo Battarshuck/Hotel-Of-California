@@ -15,7 +15,19 @@ namespace DBapplication
         {
             dbMan = new DBManager();
         }
+        //------------------------------------------Global QUERIES---------------------------------------------
 
+        public void CheckOut(string RoomNO, string USSN)
+        {
+            SetNotOccupancy(RoomNO);
+            int check = DeleteReservtion(RoomNO,USSN);
+            if (check == 1)
+                MessageBox.Show("Check out successful");
+            else
+                MessageBox.Show("This room isn't reserved by this user!");
+        }
+
+        //------------------------------------------Insert QUERIES---------------------------------------------
         public int InsertAccount(string fname, string minit, string lname, string username, string password, string gender, string bdate, string ssn, string mobile, string address)
         {
             string query = $"Insert into LoginAccount (UserName, Password) values('{username}', '{password}'); ";
@@ -40,15 +52,20 @@ namespace DBapplication
 
             price = price * N;
             InsertBill(price.ToString());
+            SetEventCostNulls();
 
             int temp = SelectLastBillNO();
 
             string query = $"INSERT INTO Reservation (StartDate,EndDate,USSN,RoomNO,BillNO)  Values ('{StartDate}','{EndDate}',{USSN},{RoomNO},{temp});";
+
+            SetOccupancy(RoomNO);
+
             return dbMan.ExecuteNonQuery(query);
         }
         public int InsertBill(string RoomCost)
         {
             string query = $"INSERT INTO Bill (RoomCost) Values ({RoomCost});";
+            SetEventCostNulls();
             return dbMan.ExecuteNonQuery(query);
         }
         public int Insert()
@@ -57,17 +74,42 @@ namespace DBapplication
             return dbMan.ExecuteNonQuery(query);
         }
 
+        //------------------------------------------Delete QUERIES---------------------------------------------
         public int Delete()
         {
             string query = $"DELETE FROM  WHERE ";
             return dbMan.ExecuteNonQuery(query);
         }
 
+        public int DeleteReservtion(string RoomNO, string USSN)
+        {
+            string query = $"DELETE FROM Reservation WHERE RoomNO = {RoomNO} and USSN = {USSN}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        //------------------------------------------Update QUERIES---------------------------------------------
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
             return dbMan.ExecuteNonQuery(query);
         }
+
+        public int SetEventCostNulls()
+        {
+            string query = $"UPDATE Bill SET Eventcost = 0 WHERE EventCost is NULL;";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int SetOccupancy(string RoomNO)
+        {
+            string query = $"UPDATE Room SET Occupancy = 1 WHERE RoomNO = {RoomNO};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        public int SetNotOccupancy(string RoomNO)
+        {
+            string query = $"UPDATE Room SET Occupancy = 0 WHERE RoomNO = {RoomNO};";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
         //------------------------------------------SELECT QUERIES---------------------------------------------
         public DataTable Select()
         {
@@ -76,6 +118,16 @@ namespace DBapplication
         }
 
         //For the combox
+        public DataTable SelectRoomNOFromReserveation()
+        {
+            string query = $"SELECT RoomNO FROM Reservation;";
+            return dbMan.ExecuteReader(query);
+        }
+        public DataTable SelectUSSNFromReserveation()
+        {
+            string query = $"SELECT USSN FROM Reservation;";
+            return dbMan.ExecuteReader(query);
+        }
         public DataTable SelectAvailableRoomNumber(string RoomType, string RoomView, string startDate, string endDate)
         {
             string query = $"(select RoomNO from Reservation where (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID) = RoomNO and (EndDate <= '{startDate}' OR StartDate >= '{endDate}')) union (select RoomNO from Room as R, RoomType as RT where RT.RoomType = '{RoomType}' and RT.RoomView = '{RoomView}' and R.RoomType = RT.RoomTypeID and R.Occupancy = 0);";
@@ -111,12 +163,17 @@ namespace DBapplication
 
         public int SelectPriceForBill(string RoomNO)
         {
-            string query = $"Select Price from Room as r, RoomType as RT , Reservation as res where res.RoomNO = r.RoomNO and r.RoomType = RT.RoomTypeID and res.RoomNO = {RoomNO};";
+            string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
             return (int)dbMan.ExecuteScalar(query);
         }
 
+        public DataTable SelectRoomPrice(string RoomNO)
+        {
+            string query = $"select EventCost, RoomCost, (EventCost + RoomCost) as TotalCost from  Bill as b, Reservation as r where b.BillNO = r.BillNO and r.RoomNO = {RoomNO};" ;
+            return dbMan.ExecuteReader(query);
+        }
 
-
+        //------------------------------------------Count QUERIES---------------------------------------------
         public int Count()
         {
             string query = $"SELECT COUNT() FROM ;";
