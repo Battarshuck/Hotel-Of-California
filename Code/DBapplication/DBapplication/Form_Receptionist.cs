@@ -152,5 +152,30 @@ namespace DBapplication
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckRoomNO_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckUSSN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckEndDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
