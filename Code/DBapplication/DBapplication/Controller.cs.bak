@@ -48,7 +48,27 @@ namespace DBapplication
 
 <<<<<<< HEAD
         public int InsertEvent(string cost, string description, string startdate, string enddate)
+        {
+            string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
+                $"values({cost}, '{description}', '{startdate}', '{enddate}')";
+            return dbMan.ExecuteNonQuery(query);
+        }
+
+        //------------------------------------DELETE QUERIES-------------------------
+        public int DeleteEvent(string num)
+        {
+            string query = $"DELETE FROM Events WHERE EventNO = {num}";
+            return dbMan.ExecuteNonQuery(query);
+        }
+        //------------------------------------UPDATE QUERIES-------------------------
+
+        public int UpdateRoomCleanStatus(string num)
+        {
+            string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
+            return dbMan.ExecuteNonQuery(query);
+        }
 =======
+
         public int InsertRerservation(string StartDate, string EndDate, string USSN, string RoomNO, int N)
         {
             int price = SelectPriceForBill(RoomNO);
@@ -78,15 +98,16 @@ namespace DBapplication
         }
 
         //------------------------------------------Delete QUERIES---------------------------------------------
-        public int Delete()
->>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
+        
+
+		public int InsertEvent(string cost, string description, string startdate, string enddate)
         {
             string query = $"insert into Events (EventCost,Description,StartDate,EndDate) " +
                 $"values({cost}, '{description}', '{startdate}', '{enddate}')";
             return dbMan.ExecuteNonQuery(query);
         }
 
-<<<<<<< HEAD
+
         //------------------------------------DELETE QUERIES-------------------------
         public int DeleteEvent(string num)
         {
@@ -100,7 +121,7 @@ namespace DBapplication
             string query = $"UPDATE Room SET Cleaned='T' WHERE RoomNO='{num}';";
             return dbMan.ExecuteNonQuery(query);
         }
-=======
+
         public int DeleteReservtion(string RoomNO, string USSN)
         {
             string query = $"DELETE FROM Reservation WHERE RoomNO = {RoomNO} and USSN = {USSN}";
@@ -108,7 +129,8 @@ namespace DBapplication
         }
 
         //------------------------------------------Update QUERIES---------------------------------------------
->>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
+
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
         public int Update()
         {
             string query = $"UPDATE SET WHERE ;";
@@ -185,6 +207,13 @@ namespace DBapplication
             return (int)dbMan.ExecuteScalar(query);
         }
 
+
+        public DataTable SelectEmployeeName(string username)
+        {
+            string query = $"EXEC SelectEmployeeName @user_username = '{username}'";
+            return dbMan.ExecuteReader(query);
+        }
+
 <<<<<<< HEAD
         public DataTable SelectEmployeeName(string username)
         {
@@ -192,6 +221,8 @@ namespace DBapplication
             return dbMan.ExecuteReader(query);
         }
 
+=======
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
         public DataTable SelectAllEventsNumbers()
         {
             string query = $"Select EventNO from Events";
@@ -209,6 +240,7 @@ namespace DBapplication
             string query = $"Select * from Events";
             return dbMan.ExecuteReader(query);
         }
+<<<<<<< HEAD
 
         public DataTable SelectRoomsToBeCleaned(string username)
         {
@@ -219,7 +251,22 @@ namespace DBapplication
         public DataTable SelectRoomsRequestClean(string username)
         {
             string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
+            return dbMan.ExecuteReader(query);
+        }
 =======
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
+
+        public DataTable SelectRoomsToBeCleaned(string username)
+        {
+            string query = $"select RoomNO,Cleaned from Room, Employee where UserName = '{username}' AND ESSN = SSN";
+            return dbMan.ExecuteReader(query);
+        }
+
+        public DataTable SelectRoomsRequestClean(string username)
+        {
+            string query = $"select RoomNO from Room, Employee where UserName = '{username}' AND ESSN = SSN AND Cleaned='F'";
+			return dbMan.ExecuteScalar(query);
+		}
         public int SelectPriceForBill(string RoomNO)
         {
             string query = $"select price from room as r, RoomType as rt where r.RoomType = rt.RoomTypeID and r.RoomNO = {RoomNO};";
@@ -229,7 +276,7 @@ namespace DBapplication
         public DataTable SelectRoomPrice(string RoomNO)
         {
             string query = $"select EventCost, RoomCost, (EventCost + RoomCost) as TotalCost from  Bill as b, Reservation as r where b.BillNO = r.BillNO and r.RoomNO = {RoomNO};" ;
->>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
+
             return dbMan.ExecuteReader(query);
         }
 

@@ -167,6 +167,7 @@
 			this.ResumeLayout(false);
 			this.PerformLayout();
 =======
+
             this.show_btn = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -271,7 +272,7 @@
             this.Load += new System.EventHandler(this.Supplier_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
->>>>>>> 5d27d4330256511a407402b6ad18fff9e50d3614
+>>>>>>> 6ce0fd7da493203ecee1453b0a31237c545f3638
 
         }
 
