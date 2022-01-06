@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DBapplication</RootNamespace>
     <AssemblyName>DBapplication</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -63,11 +63,35 @@
     <Compile Include="Form_CEO.Designer.cs">
       <DependentUpon>Form_CEO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_checkrooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_checkrooms.Designer.cs">
+      <DependentUpon>Form_checkrooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_editevents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_editevents.Designer.cs">
+      <DependentUpon>Form_editevents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_findevents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_findevents.Designer.cs">
+      <DependentUpon>Form_findevents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_HouseKeeping.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_HouseKeeping.Designer.cs">
       <DependentUpon>Form_HouseKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_housekeepingmarkrooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_housekeepingmarkrooms.Designer.cs">
+      <DependentUpon>Form_housekeepingmarkrooms.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Receptionist.cs">
       <SubType>Form</SubType>
@@ -104,8 +128,26 @@
     <EmbeddedResource Include="Account_manager.resx">
       <DependentUpon>Account_manager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_checkrooms.resx">
+      <DependentUpon>Form_checkrooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_editevents.resx">
+      <DependentUpon>Form_editevents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_findevents.resx">
+      <DependentUpon>Form_findevents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_HouseKeeping.resx">
+      <DependentUpon>Form_HouseKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_housekeepingmarkrooms.resx">
+      <DependentUpon>Form_housekeepingmarkrooms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Receptionist.resx">
       <DependentUpon>Form_Receptionist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organizer.resx">
+      <DependentUpon>Organizer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
@@ -139,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bobby-yang-BhPS0x7WdPs-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bobby-yang-BhPS0x7WdPs-unsplash %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-daniel-frese-2983489 %281%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,3 +54,10 @@ E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBap
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.exe
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.pdb
 E:\Junior\Semester1\Database\Project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_editevents.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_Receptionist.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Organizer.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_findevents.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_HouseKeeping.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_checkrooms.resources
+C:\Users\mosmo\Desktop\uni project\Hotel-Of-California\Code\DBapplication\DBapplication\obj\x86\Debug\DBapplication.Form_housekeepingmarkrooms.resources
